@@ -862,22 +862,36 @@ body {
 
 
 /* =========================================
-   FINAL FULL-WIDTH SECTION FIX
-   Sections 6 — Examples
-   Section 7 — Principles
+   FIRST MEASURE — SECTIONS 6 & 7 ONLY
+   Edge-to-edge backgrounds; existing layout preserved.
    ========================================= */
 
-/* The section background itself reaches the viewport edges.
-   The inner content remains centered. */
-.examples,
+/* Section 6 — Examples */
+.examples {
+  position: relative;
+  max-width: var(--max);
+  isolation: isolate;
+}
+
+.examples::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 100vw;
+  transform: translateX(-50%);
+  background: var(--paper-dark);
+}
+
+/* Section 7 — Principles */
 .principles {
   position: relative;
   isolation: isolate;
   max-width: var(--max);
 }
 
-/* Extend the section background beyond the centered container. */
-.examples::before,
 .principles::before {
   content: "";
   position: absolute;
@@ -887,36 +901,21 @@ body {
   left: 50%;
   width: 100vw;
   transform: translateX(-50%);
-}
-
-/* Section 6 — Examples */
-.examples::before {
-  background: var(--paper-dark);
-}
-
-/* Section 7 — Principles */
-.principles::before {
   background: var(--paper);
 }
 
-/* The Principles content panel is the actual visible navy area.
-   Extend it to the viewport edges instead of leaving it inset. */
+/* Extend only the existing navy Principles panel to the viewport edges.
+   Its content width remains controlled by the existing panel. */
 .principles-inner {
   position: relative;
   background: var(--navy);
-  width: 100vw;
-  margin-left: calc((var(--max) - 100vw) / 2);
-  margin-right: calc((var(--max) - 100vw) / 2);
-  padding-left: max(24px, calc((100vw - var(--max)) / 2 + 60px));
-  padding-right: max(24px, calc((100vw - var(--max)) / 2 + 60px));
 }
 
-/* Mobile: the section containers use 18px side padding,
-   so extend the navy Principles panel by the same amount. */
+/* Mobile: preserve the existing 18px section gutters. */
 @media (max-width: 680px) {
-  .examples,
-  .principles {
-    max-width: var(--max);
+  .examples::before,
+  .principles::before {
+    width: 100vw;
   }
 
   .principles-inner {
@@ -933,51 +932,6 @@ body {
     width: calc(100% + 40px);
     margin-left: -20px;
     margin-right: -20px;
-    padding-left: 20px;
-    padding-right: 20px;
-  }
-}
-
-
-/* =========================================
-   SECTION 6 — EXAMPLES
-   True full-width background with centered content
-   ========================================= */
-
-.examples {
-  position: relative;
-  isolation: isolate;
-  max-width: none;
-  width: 100%;
-  background: var(--paper-dark);
-}
-
-.examples::before {
-  display: none;
-}
-
-/* Re-center the Examples content inside the full-width band. */
-.examples > * {
-  width: 100%;
-  max-width: var(--max);
-  margin-left: auto;
-  margin-right: auto;
-}
-
-@media (max-width: 680px) {
-  .examples {
-    width: 100%;
-    padding-left: 18px;
-    padding-right: 18px;
-  }
-
-  .examples > * {
-    max-width: 100%;
-  }
-}
-
-@media (max-width: 400px) {
-  .examples {
     padding-left: 20px;
     padding-right: 20px;
   }
