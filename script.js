@@ -14,11 +14,17 @@ if (menuToggle && nav) {
   nav.querySelectorAll('a').forEach(link => {
     link.addEventListener('click', () => {
       nav.classList.remove('open');
-      menuToggle.setAttribute('aria-expanded', 'false');
+
+      menuToggle.setAttribute(
+        'aria-expanded',
+        'false'
+      );
     });
   });
 }
 
+
+// Scroll reveal animation
 const revealItems = document.querySelectorAll('.reveal');
 
 if ('IntersectionObserver' in window) {
@@ -41,6 +47,7 @@ if ('IntersectionObserver' in window) {
   });
 
 } else {
+  // Fallback for browsers without IntersectionObserver
   revealItems.forEach(item => {
     item.classList.add('visible');
   });
