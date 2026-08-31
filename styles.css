@@ -514,3 +514,143 @@ html, body {
     padding: 22px;
   }
 }
+
+
+/* =========================================
+   MOBILE REFINEMENT — iPHONE PASS
+   Targeted overrides; desktop is unchanged.
+   ========================================= */
+
+@media (max-width: 680px) {
+  /* Reduce the large desktop-style vertical gaps on phones. */
+  .section {
+    padding-top: 58px;
+    padding-bottom: 58px;
+  }
+
+  .section-meta {
+    margin-bottom: 28px;
+  }
+
+  /* Stack section title/intro content so neither column
+     becomes unnecessarily narrow on a phone. */
+  .section-title-row,
+  .manifesto-grid,
+  .profession-intro,
+  .included-grid {
+    grid-template-columns: 1fr;
+    gap: 28px;
+    align-items: start;
+  }
+
+  .section-title-row > p,
+  .profession-intro p {
+    max-width: 100%;
+  }
+
+  /* Approach steps read as a mobile sequence instead of
+     reserving a wide desktop number column. */
+  .steps {
+    margin-top: 42px;
+  }
+
+  .step {
+    grid-template-columns: 1fr;
+    gap: 9px;
+    padding: 24px 0;
+  }
+
+  .step-no {
+    padding-top: 0;
+  }
+
+  .step h3 {
+    font-size: 29px;
+  }
+
+  .step p {
+    max-width: 100%;
+    font-size: 14px;
+  }
+
+  /* Profession rows: retain the numbered editorial treatment,
+     but give the text the majority of the width. */
+  .profession-list {
+    margin-top: 40px;
+  }
+
+  .profession-list > div {
+    grid-template-columns: 30px minmax(0, 1fr);
+    gap: 12px;
+    padding: 22px 0;
+  }
+
+  .profession-list strong {
+    font-size: 23px;
+  }
+
+  /* Make the dark Principles panel use the full mobile width,
+     matching the edge-to-edge section backgrounds. */
+  .principles {
+    padding-top: 42px;
+    padding-bottom: 0;
+  }
+
+  .principles-inner {
+    width: calc(100% + 48px);
+    margin-left: -24px;
+    margin-right: -24px;
+    padding: 42px 24px 52px;
+  }
+
+  .principle-row {
+    grid-template-columns: 1fr;
+    gap: 0;
+    margin-top: 42px;
+  }
+
+  .principle-row div {
+    padding: 22px 0;
+  }
+
+  .principle-row strong {
+    margin-top: 20px;
+    font-size: 21px;
+  }
+
+  /* Keep example cards comfortably separated and tappable. */
+  .example-grid {
+    gap: 18px;
+    margin-top: 40px;
+  }
+
+  .example-card {
+    padding: 24px;
+  }
+
+  /* Avoid overly tall empty areas around the contact CTA. */
+  .contact {
+    padding-top: 58px;
+    padding-bottom: 58px;
+  }
+}
+
+@media (max-width: 400px) {
+  .section {
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+
+  .principles-inner {
+    width: calc(100% + 40px);
+    margin-left: -20px;
+    margin-right: -20px;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .hero {
+    padding-top: 92px;
+    padding-bottom: 54px;
+  }
+}
