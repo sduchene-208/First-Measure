@@ -860,50 +860,125 @@ body {
   }
 }
 
+
 /* =========================================
-   SECTION 7 — THE PRINCIPLES
-   Full-width navy background
-   Centered content
+   FINAL FULL-WIDTH SECTION FIX
+   Sections 6 — Examples
+   Section 7 — Principles
    ========================================= */
 
+/* The section background itself reaches the viewport edges.
+   The inner content remains centered. */
+.examples,
 .principles {
   position: relative;
   isolation: isolate;
-  background: var(--navy);
-  max-width: none;
-  width: 100%;
+  max-width: var(--max);
 }
 
+/* Extend the section background beyond the centered container. */
+.examples::before,
 .principles::before {
-  display: none;
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 100vw;
+  transform: translateX(-50%);
 }
 
+/* Section 6 — Examples */
+.examples::before {
+  background: var(--paper-dark);
+}
+
+/* Section 7 — Principles */
+.principles::before {
+  background: var(--paper);
+}
+
+/* The Principles content panel is the actual visible navy area.
+   Extend it to the viewport edges instead of leaving it inset. */
 .principles-inner {
   position: relative;
-  width: 100%;
-  max-width: var(--max);
-  margin: 0 auto;
-  background: transparent;
-  color: var(--paper);
-  padding: 60px 24px;
+  background: var(--navy);
+  width: 100vw;
+  margin-left: calc((var(--max) - 100vw) / 2);
+  margin-right: calc((var(--max) - 100vw) / 2);
+  padding-left: max(24px, calc((100vw - var(--max)) / 2 + 60px));
+  padding-right: max(24px, calc((100vw - var(--max)) / 2 + 60px));
 }
 
+/* Mobile: the section containers use 18px side padding,
+   so extend the navy Principles panel by the same amount. */
 @media (max-width: 680px) {
+  .examples,
   .principles {
-    width: 100%;
+    max-width: var(--max);
   }
 
   .principles-inner {
-    width: 100%;
-    margin: 0 auto;
-    padding: 42px 24px 52px;
+    width: calc(100% + 36px);
+    margin-left: -18px;
+    margin-right: -18px;
+    padding-left: 24px;
+    padding-right: 24px;
   }
 }
 
 @media (max-width: 400px) {
   .principles-inner {
+    width: calc(100% + 40px);
+    margin-left: -20px;
+    margin-right: -20px;
     padding-left: 20px;
     padding-right: 20px;
   }
 }
 
+
+/* =========================================
+   SECTION 6 — EXAMPLES
+   True full-width background with centered content
+   ========================================= */
+
+.examples {
+  position: relative;
+  isolation: isolate;
+  max-width: none;
+  width: 100%;
+  background: var(--paper-dark);
+}
+
+.examples::before {
+  display: none;
+}
+
+/* Re-center the Examples content inside the full-width band. */
+.examples > * {
+  width: 100%;
+  max-width: var(--max);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media (max-width: 680px) {
+  .examples {
+    width: 100%;
+    padding-left: 18px;
+    padding-right: 18px;
+  }
+
+  .examples > * {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 400px) {
+  .examples {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
