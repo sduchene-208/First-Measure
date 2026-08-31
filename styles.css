@@ -279,50 +279,238 @@ footer a:last-child { color: var(--accent); }
 @media (max-width: 1000px) { .example-grid { grid-template-columns:1fr 1fr; } .pricing-grid { grid-template-columns:1fr; } }
 @media (max-width: 680px) { .example-grid { grid-template-columns:1fr; } .example-card { min-height:0; } .examples-note { grid-template-columns:1fr; } }
 
+
 /* =========================================
-   FIRST MEASURE — FULL-WIDTH BACKGROUNDS
+   FIRST MEASURE — MOBILE RESPONSIVENESS
+   Desktop layout remains unchanged.
    ========================================= */
 
-.hero,
-.manifesto,
-.approach,
-.included,
-.professions,
-.examples,
-.contact {
-  position: relative;
-  isolation: isolate;
+html, body {
+  max-width: 100%;
+  overflow-x: hidden;
 }
 
-.hero::before,
-.manifesto::before,
-.approach::before,
-.included::before,
-.professions::before,
-.examples::before,
-.contact::before {
-  content: "";
-  position: absolute;
-  z-index: -1;
-  top: 0;
-  bottom: 0;
-  left: 50%;
-  width: 100vw;
-  transform: translateX(-50%);
+@media (max-width: 900px) {
+  .hero {
+    min-height: auto;
+    grid-template-columns: 42px minmax(0, 1fr);
+    gap: 22px;
+    padding-top: 125px;
+    padding-bottom: 75px;
+  }
+
+  .hero-content {
+    min-width: 0;
+  }
+
+  .hero h1 {
+    font-size: clamp(3.2rem, 10vw, 5.5rem);
+    line-height: .92;
+  }
+
+  .hero-intro {
+    max-width: 100%;
+    font-size: 16px;
+  }
+
+  .hero-note {
+    grid-column: 2;
+    max-width: 100%;
+    margin-top: 35px;
+  }
+
+  .manifesto-grid,
+  .profession-intro,
+  .included-grid {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+
+  .contrast {
+    grid-template-columns: 1fr;
+    gap: 30px;
+    margin-top: 60px;
+  }
+
+  .profession-list {
+    grid-template-columns: 1fr;
+  }
+
+  .principle-row {
+    grid-template-columns: 1fr 1fr;
+    gap: 28px;
+  }
+
+  .example-grid {
+    grid-template-columns: 1fr 1fr;
+  }
 }
 
-.hero::before {
-  background: var(--navy);
+@media (max-width: 680px) {
+  .site-header {
+    padding: 18px 20px;
+  }
+
+  .wordmark {
+    font-size: 13px;
+  }
+
+  .hero {
+    grid-template-columns: 1fr;
+    gap: 0;
+    padding: 112px 24px 62px;
+  }
+
+  .hero-number {
+    display: none;
+  }
+
+  .hero h1 {
+    max-width: 100%;
+    font-size: clamp(3.05rem, 15vw, 4.8rem);
+    line-height: .9;
+    letter-spacing: -.06em;
+  }
+
+  .hero-intro {
+    margin-top: 28px;
+    font-size: 15px;
+    line-height: 1.55;
+  }
+
+  .hero-note {
+    grid-column: auto;
+    margin-top: 38px;
+    padding-top: 18px;
+  }
+
+  .hero-note p {
+    font-size: 11px;
+  }
+
+  .section {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+
+  h2 {
+    font-size: clamp(2.7rem, 12vw, 4.2rem);
+  }
+
+  .body-copy {
+    font-size: 15px;
+  }
+
+  .contrast {
+    margin-top: 50px;
+  }
+
+  .profession-list {
+    margin-top: 50px;
+  }
+
+  .profession-list > div {
+    grid-template-columns: 42px minmax(0, 1fr);
+    gap: 14px;
+    padding: 20px 0;
+  }
+
+  .service-list > div {
+    grid-template-columns: 34px minmax(0, 1fr);
+    gap: 12px;
+  }
+
+  .pricing-grid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .price-card {
+    padding: 24px;
+  }
+
+  .example-grid {
+    grid-template-columns: 1fr;
+    gap: 22px;
+    margin-top: 48px;
+  }
+
+  .example-card {
+    min-height: 0;
+    padding: 25px;
+  }
+
+  .example-card h3 {
+    font-size: 25px;
+    margin-top: 25px;
+  }
+
+  .example-card .text-link {
+    margin-top: 30px;
+    padding-top: 0;
+  }
+
+  .examples-note {
+    grid-template-columns: 1fr;
+    gap: 10px;
+    margin-top: 30px;
+  }
+
+  .principles {
+    padding-top: 55px;
+  }
+
+  .principles-inner {
+    padding: 42px 24px;
+  }
+
+  .principle-row {
+    grid-template-columns: 1fr;
+    gap: 26px;
+    margin-top: 50px;
+  }
+
+  .contact {
+    padding-top: 70px;
+    padding-bottom: 70px;
+  }
+
+  .contact h2 {
+    max-width: 100%;
+  }
+
+  .button.large {
+    width: 100%;
+    justify-content: center;
+  }
 }
 
-.manifesto::before,
-.included::before,
-.contact::before {
-  background: var(--paper);
-}
+@media (max-width: 400px) {
+  .hero {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
 
-.approach::before,
-.professions::before,
-.examples::before {
-  background: var(--paper-dark);
+  .hero h1 {
+    font-size: clamp(2.85rem, 15vw, 4rem);
+  }
+
+  .section {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  h2 {
+    font-size: clamp(2.55rem, 12vw, 3.7rem);
+  }
+
+  .principles-inner {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .example-card,
+  .price-card {
+    padding: 22px;
+  }
 }
