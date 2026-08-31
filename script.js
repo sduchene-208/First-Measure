@@ -1,19 +1,19 @@
 const menuToggle = document.querySelector('.menu-toggle');
-const siteNav = document.querySelector('.site-nav');
+const nav = document.querySelector('#site-nav');
 
-if (menuToggle && siteNav) {
+if (menuToggle && nav) {
   menuToggle.addEventListener('click', () => {
-    const isOpen = siteNav.classList.toggle('open');
+    const open = nav.classList.toggle('open');
 
     menuToggle.setAttribute(
       'aria-expanded',
-      String(isOpen)
+      String(open)
     );
   });
 
-  siteNav.querySelectorAll('a').forEach((link) => {
+  nav.querySelectorAll('a').forEach(link => {
     link.addEventListener('click', () => {
-      siteNav.classList.remove('open');
+      nav.classList.remove('open');
 
       menuToggle.setAttribute(
         'aria-expanded',
@@ -30,7 +30,7 @@ const revealItems = document.querySelectorAll('.reveal');
 if ('IntersectionObserver' in window) {
   const observer = new IntersectionObserver(
     (entries, obs) => {
-      entries.forEach((entry) => {
+      entries.forEach(entry => {
         if (entry.isIntersecting) {
           entry.target.classList.add('visible');
           obs.unobserve(entry.target);
@@ -42,13 +42,13 @@ if ('IntersectionObserver' in window) {
     }
   );
 
-  revealItems.forEach((item) => {
+  revealItems.forEach(item => {
     observer.observe(item);
   });
 
 } else {
   // Fallback for older browsers
-  revealItems.forEach((item) => {
+  revealItems.forEach(item => {
     item.classList.add('visible');
   });
 }
