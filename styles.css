@@ -1,11 +1,13 @@
 :root {
-  --paper: #f7f5f0;
-  --paper-dark: #ebe7df;
-  --ink: #181817;
-  --muted: #706f69;
-  --line: #d6d2c9;
-  --accent: #b56545;
-  --accent-soft: #ead9d0;
+  --paper: #f4f6f8;
+  --paper-dark: #e6ebf0;
+  --ink: #172331;
+  --muted: #5d6875;
+  --line: #cbd3dc;
+  --accent: #0f6b78;
+  --accent-soft: #d9ecef;
+  --navy: #102434;
+  --navy-soft: #1b3447;
   --max: 1180px;
 }
 * { box-sizing: border-box; }
@@ -19,7 +21,7 @@ a { color: inherit; text-decoration: none; }
 .site-header {
   height: 76px; padding: 0 max(24px, calc((100vw - var(--max)) / 2));
   display: flex; align-items: center; justify-content: space-between;
-  border-bottom: 1px solid var(--line); background: rgba(247,245,240,.94);
+  border-bottom: 1px solid var(--line); background: rgba(244,246,248,.94);
   position: fixed; top: 0; left: 0; right: 0; z-index: 50; backdrop-filter: blur(10px);
 }
 .wordmark { display: inline-flex; flex-direction: column; font-size: 12px; font-weight: 800; letter-spacing: .08em; line-height: .95; }
@@ -92,15 +94,15 @@ h2 { margin: 0; font-family: Georgia, "Times New Roman", serif; font-size: clamp
 .service-list p { color: var(--muted); margin: 4px 0 0; font-size: 12px; }
 .principles { padding-top: 80px; }
 .principles-inner { background: var(--ink); color: var(--paper); padding: 60px; }
-.principles-inner .section-meta { color: #aaa69e; }
-.principles-inner .section-meta span:first-child { color: #d28b6e; }
+.principles-inner .section-meta { color: #aeb9c3; }
+.principles-inner .section-meta span:first-child { color: #76c1c9; }
 .principles-inner h2 { max-width: 900px; }
-.principles-inner h2 em { color: #d28b6e; }
+.principles-inner h2 em { color: #76c1c9; }
 .principle-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 30px; margin-top: 75px; }
-.principle-row div { border-top: 1px solid #4c4a46; padding-top: 14px; }
-.principle-row span { color: #d28b6e; font-size: 10px; }
+.principle-row div { border-top: 1px solid #405565; padding-top: 14px; }
+.principle-row span { color: #76c1c9; font-size: 10px; }
 .principle-row strong { display: block; margin-top: 32px; font-family: Georgia, serif; font-weight: 400; font-size: 18px; }
-.principle-row p { color: #aaa69e; font-size: 11px; }
+.principle-row p { color: #aeb9c3; font-size: 11px; }
 .contact { text-align: center; padding-top: 150px; padding-bottom: 160px; }
 .contact-meta { color: var(--accent); }
 .contact h2 { max-width: 950px; margin: 30px auto 0; }
@@ -143,4 +145,110 @@ footer a:last-child { color: var(--accent); }
   html { scroll-behavior: auto; }
   *, *::before, *::after { animation: none !important; transition: none !important; }
   .reveal { opacity: 1; transform: none; }
+}
+
+/* =========================================
+   EXAMPLES / SAMPLE PORTFOLIOS
+   ========================================= */
+
+.example-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 28px;
+  margin-top: 72px;
+  align-items: stretch;
+}
+
+.example-card {
+  min-width: 0;
+  min-height: 340px;
+  padding: 30px;
+  border: 1px solid var(--line);
+  background: var(--paper);
+  display: flex;
+  flex-direction: column;
+}
+
+.example-type {
+  display: block;
+  color: var(--accent);
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: .14em;
+  line-height: 1.2;
+}
+
+.example-card h3 {
+  margin: 34px 0 12px;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 28px;
+  font-weight: 400;
+  line-height: 1.1;
+}
+
+.example-card p {
+  margin: 0;
+  max-width: 42ch;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+.example-card .text-link {
+  display: inline-block;
+  align-self: flex-start;
+  margin-top: auto;
+  padding-top: 30px;
+}
+
+.examples-note {
+  display: grid;
+  grid-template-columns: 150px minmax(0, 1fr);
+  gap: 24px;
+  margin-top: 38px;
+  padding-top: 18px;
+  border-top: 1px solid var(--line);
+}
+
+.examples-note > span {
+  color: var(--accent);
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: .14em;
+}
+
+.examples-note p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 11px;
+  line-height: 1.55;
+}
+
+@media (max-width: 900px) {
+  .example-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+  }
+
+  .example-card {
+    min-height: 320px;
+  }
+}
+
+@media (max-width: 680px) {
+  .example-grid {
+    grid-template-columns: 1fr;
+    gap: 28px;
+    margin-top: 52px;
+  }
+
+  .example-card {
+    min-height: 0;
+  }
+
+  .examples-note {
+    grid-template-columns: 1fr;
+    gap: 10px;
+    margin-top: 32px;
+  }
 }
