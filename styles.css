@@ -165,7 +165,7 @@ footer a:last-child { color: var(--accent); }
 .price-card h3 { font-family:Georgia,"Times New Roman",serif; font-size:24px; font-weight:400; line-height:1.18; margin:24px 0 18px; }
 .price-card li { color:var(--muted); margin:8px 0; font-size:12px; }
 .price-card .text-link { display:inline-block; margin-top:22px; }
-.example-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:28px; margin-top:60px; align-items:stretch; }
+.example-grid { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:28px; margin-top:60px; align-items:stretch; }
 .example-card { min-width:0; min-height:330px; padding:28px; border:1px solid var(--line); background:var(--paper); display:flex; flex-direction:column; }
 .example-type { color:var(--accent); font-size:10px; font-weight:800; letter-spacing:.14em; }
 .example-card h3 { font-family:Georgia,"Times New Roman",serif; font-size:25px; font-weight:400; margin:30px 0 10px; line-height:1.12; }
