@@ -1,11 +1,12 @@
 :root {
-  --paper: #f7f5f0;
-  --paper-dark: #ebe7df;
-  --ink: #181817;
-  --muted: #706f69;
-  --line: #d6d2c9;
-  --accent: #b56545;
-  --accent-soft: #ead9d0;
+  --paper: #F2EFE9;
+  --paper-dark: #E5E0D7;
+  --ink: #182B38;
+  --muted: #657079;
+  --line: #CEC8BE;
+  --accent: #A66A45;
+  --accent-soft: #E7D8CE;
+  --navy: #182E3D;
   --max: 1180px;
 }
 * { box-sizing: border-box; }
@@ -31,7 +32,7 @@ nav .nav-link { border-bottom: 1px solid var(--ink); padding-bottom: 3px; color:
 .menu-toggle { display: none; border: 0; background: none; padding: 8px; }
 .menu-toggle span { display: block; width: 22px; height: 1px; background: var(--ink); margin: 5px; }
 .hero, .section { max-width: var(--max); margin: 0 auto; padding-left: 24px; padding-right: 24px; }
-.hero { min-height: 100vh; padding-top: 150px; padding-bottom: 90px; display: grid; grid-template-columns: 70px 1fr 210px; gap: 35px; align-items: center; }
+.hero { min-height: 100vh; padding-top: 150px; padding-bottom: 90px; display: grid; background: var(--navy); color: var(--paper); grid-template-columns: 70px 1fr 210px; gap: 35px; align-items: center; }
 .hero-number { align-self: start; padding-top: 7px; color: var(--accent); font-size: 11px; letter-spacing: .12em; }
 .kicker, .section-meta, .contact-meta {
   font-size: 10px; font-weight: 700; letter-spacing: .15em; color: var(--muted);
@@ -56,7 +57,7 @@ nav .nav-link { border-bottom: 1px solid var(--ink); padding-bottom: 3px; color:
 .section { padding-top: 130px; padding-bottom: 130px; border-top: 1px solid var(--line); }
 .section-meta { display: flex; gap: 16px; margin-bottom: 65px; }
 .section-meta span:first-child { color: var(--accent); }
-.manifesto-grid { display: grid; grid-template-columns: 1.1fr .9fr; gap: 100px; align-items: end; }
+.manifesto { background: var(--paper); } .manifesto-grid { display: grid; grid-template-columns: 1.1fr .9fr; gap: 100px; align-items: end; }
 h2 { margin: 0; font-family: Georgia, "Times New Roman", serif; font-size: clamp(2.7rem, 5.3vw, 5.7rem); font-weight: 400; line-height: .96; letter-spacing: -.055em; }
 .body-copy { max-width: 480px; color: var(--muted); font-size: 16px; }
 .body-copy p { margin: 0 0 18px; }
@@ -69,7 +70,7 @@ h2 { margin: 0; font-family: Georgia, "Times New Roman", serif; font-size: clamp
 .contrast-arrow { display: grid; place-items: center; color: var(--accent); border-left: 1px solid var(--line); border-right: 1px solid var(--line); }
 .section-title-row { display: grid; grid-template-columns: 1.15fr .85fr; gap: 90px; align-items: end; }
 .section-title-row > p { max-width: 400px; color: var(--muted); margin: 0; font-size: 16px; }
-.steps { margin-top: 85px; border-top: 1px solid var(--ink); }
+.approach { background: var(--paper-dark); } .steps { margin-top: 85px; border-top: 1px solid var(--ink); }
 .step { display: grid; grid-template-columns: 80px 1fr; gap: 30px; padding: 27px 0; border-bottom: 1px solid var(--line); }
 .step-no { color: var(--accent); font-size: 11px; padding-top: 5px; }
 .step h3 { margin: 0; font-family: Georgia, serif; font-size: 27px; font-weight: 400; }
@@ -83,43 +84,24 @@ h2 { margin: 0; font-family: Georgia, "Times New Roman", serif; font-size: clamp
 .profession-list span { grid-row: 1 / 3; color: var(--accent); font-size: 10px; }
 .profession-list strong { font-family: Georgia, serif; font-size: 20px; font-weight: 400; }
 .profession-list small { color: var(--muted); font-size: 11px; }
-.included-grid { display: grid; grid-template-columns: .8fr 1.2fr; gap: 100px; }
+.included { background: var(--paper); } .included-grid { display: grid; grid-template-columns: .8fr 1.2fr; gap: 100px; }
 .included-grid > div:first-child > p { max-width: 360px; color: var(--muted); margin-top: 30px; }
 .service-list { border-top: 1px solid var(--ink); }
 .service-list > div { display: grid; grid-template-columns: 45px 1fr; gap: 18px; padding: 22px 0; border-bottom: 1px solid var(--line); }
 .service-list span { color: var(--accent); font-size: 10px; }
 .service-list strong { font-family: Georgia, serif; font-size: 20px; font-weight: 400; }
 .service-list p { color: var(--muted); margin: 4px 0 0; font-size: 12px; }
-
-/* Interview evidence section */
-.interview-intro { display: grid; grid-template-columns: 1.1fr .9fr; gap: 100px; align-items: end; }
-.interview-intro .body-copy { max-width: 480px; }
-.interview-intro .body-copy strong { color: var(--ink); }
-.interview-flow { display: grid; grid-template-columns: 1fr 55px 1fr 55px 1fr; margin-top: 75px; border-top: 1px solid var(--ink); border-bottom: 1px solid var(--line); }
-.interview-flow article { min-height: 235px; padding: 26px 24px 30px; }
-.interview-flow article + .flow-arrow { border-left: 1px solid var(--line); border-right: 1px solid var(--line); }
-.interview-flow .flow-highlight { background: var(--accent-soft); }
-.flow-no { display: block; color: var(--accent); font-size: 10px; margin-bottom: 34px; }
-.interview-flow small { font-size: 9px; font-weight: 800; letter-spacing: .15em; color: var(--muted); }
-.interview-flow h3 { margin: 28px 0 0; font-family: Georgia, serif; font-size: 22px; font-weight: 400; line-height: 1.2; }
-.flow-arrow { display: grid; place-items: center; color: var(--accent); font-size: 20px; }
-.interview-bottom { margin-top: 45px; display: grid; grid-template-columns: 1fr 1fr; gap: 80px; padding-top: 25px; border-top: 1px solid var(--line); }
-.interview-bottom span { display: block; color: var(--accent); font-size: 9px; font-weight: 800; letter-spacing: .15em; }
-.interview-bottom strong { display: block; margin-top: 20px; max-width: 440px; font-family: Georgia, serif; font-size: 25px; font-weight: 400; line-height: 1.2; }
-.interview-bottom p { margin: 0; color: var(--muted); max-width: 430px; }
-.interview-bottom em { color: var(--accent); font-family: Georgia, serif; font-size: 19px; }
-
 .principles { padding-top: 80px; }
 .principles-inner { background: var(--ink); color: var(--paper); padding: 60px; }
-.principles-inner .section-meta { color: #aaa69e; }
-.principles-inner .section-meta span:first-child { color: #d28b6e; }
+.principles-inner .section-meta { color: #C6C0B7; }
+.principles-inner .section-meta span:first-child { color: #C78360; }
 .principles-inner h2 { max-width: 900px; }
-.principles-inner h2 em { color: #d28b6e; }
+.principles-inner h2 em { color: #C78360; }
 .principle-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 30px; margin-top: 75px; }
-.principle-row div { border-top: 1px solid #4c4a46; padding-top: 14px; }
-.principle-row span { color: #d28b6e; font-size: 10px; }
+.principle-row div { border-top: 1px solid #53616A; padding-top: 14px; }
+.principle-row span { color: #C78360; font-size: 10px; }
 .principle-row strong { display: block; margin-top: 32px; font-family: Georgia, serif; font-weight: 400; font-size: 18px; }
-.principle-row p { color: #aaa69e; font-size: 11px; }
+.principle-row p { color: #C6C0B7; font-size: 11px; }
 .contact { text-align: center; padding-top: 150px; padding-bottom: 160px; }
 .contact-meta { color: var(--accent); }
 .contact h2 { max-width: 950px; margin: 30px auto 0; }
@@ -132,14 +114,8 @@ footer a:last-child { color: var(--accent); }
 @media (max-width: 900px) {
   .hero { grid-template-columns: 40px 1fr; }
   .hero-note { grid-column: 2; max-width: 260px; }
-  .manifesto-grid, .section-title-row, .profession-intro, .included-grid { grid-template-columns: 1fr; gap: 45px; }
+  .manifesto-grid, .section-title-row, .profession-intro, .included { background: var(--paper); } .included-grid { grid-template-columns: 1fr; gap: 45px; }
   .principle-row { grid-template-columns: 1fr 1fr; }
-
-  .interview-intro { grid-template-columns: 1fr; gap: 45px; }
-  .interview-flow { grid-template-columns: 1fr; }
-  .interview-flow article { min-height: 0; }
-  .interview-flow article + .flow-arrow { min-height: 48px; border-left: 0; border-right: 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
-  .interview-bottom { grid-template-columns: 1fr; gap: 35px; }
 }
 @media (max-width: 680px) {
   .site-header { height: 66px; padding: 0 18px; }
@@ -168,4 +144,727 @@ footer a:last-child { color: var(--accent); }
   html { scroll-behavior: auto; }
   *, *::before, *::after { animation: none !important; transition: none !important; }
   .reveal { opacity: 1; transform: none; }
+}
+
+/* =========================================
+   EXAMPLES / SAMPLE PORTFOLIOS
+   ========================================= */
+
+.example-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 28px;
+  margin-top: 72px;
+  align-items: stretch;
+}
+
+.example-card {
+  min-width: 0;
+  min-height: 340px;
+  padding: 30px;
+  border: 1px solid var(--line);
+  background: var(--paper);
+  display: flex;
+  flex-direction: column;
+}
+
+.example-type {
+  display: block;
+  color: var(--accent);
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: .14em;
+  line-height: 1.2;
+}
+
+.example-card h3 {
+  margin: 34px 0 12px;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 28px;
+  font-weight: 400;
+  line-height: 1.1;
+}
+
+.example-card p {
+  margin: 0;
+  max-width: 42ch;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+.example-card .text-link {
+  display: inline-block;
+  align-self: flex-start;
+  margin-top: auto;
+  padding-top: 30px;
+}
+
+.examples-note {
+  display: grid;
+  grid-template-columns: 150px minmax(0, 1fr);
+  gap: 24px;
+  margin-top: 38px;
+  padding-top: 18px;
+  border-top: 1px solid var(--line);
+}
+
+.examples-note > span {
+  color: var(--accent);
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: .14em;
+}
+
+.examples-note p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 11px;
+  line-height: 1.55;
+}
+
+@media (max-width: 900px) {
+  .example-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+  }
+
+  .example-card {
+    min-height: 320px;
+  }
+}
+
+@media (max-width: 680px) {
+  .example-grid {
+    grid-template-columns: 1fr;
+    gap: 28px;
+    margin-top: 52px;
+  }
+
+  .example-card {
+    min-height: 0;
+  }
+
+  .examples-note {
+    grid-template-columns: 1fr;
+    gap: 10px;
+    margin-top: 32px;
+  }
+}
+
+
+.hero .kicker { color: var(--accent); }
+.hero h1 em { color: var(--accent); }
+.hero-intro, .hero-note p { color: #d8e0e6; }
+.hero-note { border-color: #405667; }
+
+.pricing-grid { display:grid; grid-template-columns:1fr 1fr; gap:24px; margin-top:10px; }
+.price-card { border:1px solid var(--line); background:var(--paper); padding:28px; }
+.price-card.featured { background:var(--accent-soft); }
+.price-top { display:flex; justify-content:space-between; gap:20px; align-items:baseline; }
+.price-label { font-size:10px; font-weight:800; letter-spacing:.14em; color:var(--muted); }
+.price { font-family:Georgia,"Times New Roman",serif; font-size:28px; color:var(--accent); }
+.price-card h3 { font-family:Georgia,"Times New Roman",serif; font-size:24px; font-weight:400; line-height:1.18; margin:24px 0 18px; }
+.price-card li { color:var(--muted); margin:8px 0; font-size:12px; }
+.price-card .text-link { display:inline-block; margin-top:22px; }
+.example-grid { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:28px; margin-top:60px; align-items:stretch; }
+.example-card { min-width:0; min-height:330px; padding:28px; border:1px solid var(--line); background:var(--paper); display:flex; flex-direction:column; }
+.example-type { color:var(--accent); font-size:10px; font-weight:800; letter-spacing:.14em; }
+.example-card h3 { font-family:Georgia,"Times New Roman",serif; font-size:25px; font-weight:400; margin:30px 0 10px; line-height:1.12; }
+.example-card p { color:var(--muted); font-size:12px; line-height:1.55; margin:0; }
+.example-card .text-link { margin-top:auto; padding-top:28px; display:inline-block; align-self:flex-start; }
+.examples-note { display:grid; grid-template-columns:150px minmax(0,1fr); gap:24px; margin-top:36px; padding-top:18px; border-top:1px solid var(--line); }
+.examples-note > span { color:var(--accent); font-size:10px; font-weight:800; letter-spacing:.14em; }
+.examples-note p { margin:0; color:var(--muted); font-size:11px; }
+@media (max-width: 1000px) { .example-grid { grid-template-columns:1fr 1fr; } .pricing-grid { grid-template-columns:1fr; } }
+@media (max-width: 680px) { .example-grid { grid-template-columns:1fr; } .example-card { min-height:0; } .examples-note { grid-template-columns:1fr; } }
+
+
+/* =========================================
+   FIRST MEASURE — MOBILE RESPONSIVENESS
+   Desktop layout remains unchanged.
+   ========================================= */
+
+html, body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+@media (max-width: 900px) {
+  .hero {
+    min-height: auto;
+    grid-template-columns: 42px minmax(0, 1fr);
+    gap: 22px;
+    padding-top: 125px;
+    padding-bottom: 75px;
+  }
+
+  .hero-content {
+    min-width: 0;
+  }
+
+  .hero h1 {
+    font-size: clamp(3.2rem, 10vw, 5.5rem);
+    line-height: .92;
+  }
+
+  .hero-intro {
+    max-width: 100%;
+    font-size: 16px;
+  }
+
+  .hero-note {
+    grid-column: 2;
+    max-width: 100%;
+    margin-top: 35px;
+  }
+
+  .manifesto-grid,
+  .profession-intro,
+  .included-grid {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+
+  .contrast {
+    grid-template-columns: 1fr;
+    gap: 30px;
+    margin-top: 60px;
+  }
+
+  .profession-list {
+    grid-template-columns: 1fr;
+  }
+
+  .principle-row {
+    grid-template-columns: 1fr 1fr;
+    gap: 28px;
+  }
+
+  .example-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 680px) {
+  .site-header {
+    padding: 18px 20px;
+  }
+
+  .wordmark {
+    font-size: 13px;
+  }
+
+  .hero {
+    grid-template-columns: 1fr;
+    gap: 0;
+    padding: 112px 24px 62px;
+  }
+
+  .hero-number {
+    display: none;
+  }
+
+  .hero h1 {
+    max-width: 100%;
+    font-size: clamp(3.05rem, 15vw, 4.8rem);
+    line-height: .9;
+    letter-spacing: -.06em;
+  }
+
+  .hero-intro {
+    margin-top: 28px;
+    font-size: 15px;
+    line-height: 1.55;
+  }
+
+  .hero-note {
+    grid-column: auto;
+    margin-top: 38px;
+    padding-top: 18px;
+  }
+
+  .hero-note p {
+    font-size: 11px;
+  }
+
+  .section {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+
+  h2 {
+    font-size: clamp(2.7rem, 12vw, 4.2rem);
+  }
+
+  .body-copy {
+    font-size: 15px;
+  }
+
+  .contrast {
+    margin-top: 50px;
+  }
+
+  .profession-list {
+    margin-top: 50px;
+  }
+
+  .profession-list > div {
+    grid-template-columns: 42px minmax(0, 1fr);
+    gap: 14px;
+    padding: 20px 0;
+  }
+
+  .service-list > div {
+    grid-template-columns: 34px minmax(0, 1fr);
+    gap: 12px;
+  }
+
+  .pricing-grid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .price-card {
+    padding: 24px;
+  }
+
+  .example-grid {
+    grid-template-columns: 1fr;
+    gap: 22px;
+    margin-top: 48px;
+  }
+
+  .example-card {
+    min-height: 0;
+    padding: 25px;
+  }
+
+  .example-card h3 {
+    font-size: 25px;
+    margin-top: 25px;
+  }
+
+  .example-card .text-link {
+    margin-top: 30px;
+    padding-top: 0;
+  }
+
+  .examples-note {
+    grid-template-columns: 1fr;
+    gap: 10px;
+    margin-top: 30px;
+  }
+
+  .principles {
+    padding-top: 55px;
+  }
+
+  .principles-inner {
+    padding: 42px 24px;
+  }
+
+  .principle-row {
+    grid-template-columns: 1fr;
+    gap: 26px;
+    margin-top: 50px;
+  }
+
+  .contact {
+    padding-top: 70px;
+    padding-bottom: 70px;
+  }
+
+  .contact h2 {
+    max-width: 100%;
+  }
+
+  .button.large {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 400px) {
+  .hero {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .hero h1 {
+    font-size: clamp(2.85rem, 15vw, 4rem);
+  }
+
+  .section {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  h2 {
+    font-size: clamp(2.55rem, 12vw, 3.7rem);
+  }
+
+  .principles-inner {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .example-card,
+  .price-card {
+    padding: 22px;
+  }
+}
+
+
+/* =========================================
+   MOBILE REFINEMENT — iPHONE PASS
+   Targeted overrides; desktop is unchanged.
+   ========================================= */
+
+@media (max-width: 680px) {
+  /* Reduce the large desktop-style vertical gaps on phones. */
+  .section {
+    padding-top: 58px;
+    padding-bottom: 58px;
+  }
+
+  .section-meta {
+    margin-bottom: 28px;
+  }
+
+  /* Stack section title/intro content so neither column
+     becomes unnecessarily narrow on a phone. */
+  .section-title-row,
+  .manifesto-grid,
+  .profession-intro,
+  .included-grid {
+    grid-template-columns: 1fr;
+    gap: 28px;
+    align-items: start;
+  }
+
+  .section-title-row > p,
+  .profession-intro p {
+    max-width: 100%;
+  }
+
+  /* Approach steps read as a mobile sequence instead of
+     reserving a wide desktop number column. */
+  .steps {
+    margin-top: 42px;
+  }
+
+  .step {
+    grid-template-columns: 1fr;
+    gap: 9px;
+    padding: 24px 0;
+  }
+
+  .step-no {
+    padding-top: 0;
+  }
+
+  .step h3 {
+    font-size: 29px;
+  }
+
+  .step p {
+    max-width: 100%;
+    font-size: 14px;
+  }
+
+  /* Profession rows: retain the numbered editorial treatment,
+     but give the text the majority of the width. */
+  .profession-list {
+    margin-top: 40px;
+  }
+
+  .profession-list > div {
+    grid-template-columns: 30px minmax(0, 1fr);
+    gap: 12px;
+    padding: 22px 0;
+  }
+
+  .profession-list strong {
+    font-size: 23px;
+  }
+
+  /* Make the dark Principles panel use the full mobile width,
+     matching the edge-to-edge section backgrounds. */
+  .principles {
+    padding-top: 42px;
+    padding-bottom: 0;
+  }
+
+  .principles-inner {
+    width: calc(100% + 48px);
+    margin-left: -24px;
+    margin-right: -24px;
+    padding: 42px 24px 52px;
+  }
+
+  .principle-row {
+    grid-template-columns: 1fr;
+    gap: 0;
+    margin-top: 42px;
+  }
+
+  .principle-row div {
+    padding: 22px 0;
+  }
+
+  .principle-row strong {
+    margin-top: 20px;
+    font-size: 21px;
+  }
+
+  /* Keep example cards comfortably separated and tappable. */
+  .example-grid {
+    gap: 18px;
+    margin-top: 40px;
+  }
+
+  .example-card {
+    padding: 24px;
+  }
+
+  /* Avoid overly tall empty areas around the contact CTA. */
+  .contact {
+    padding-top: 58px;
+    padding-bottom: 58px;
+  }
+}
+
+@media (max-width: 400px) {
+  .section {
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+
+  .principles-inner {
+    width: calc(100% + 40px);
+    margin-left: -20px;
+    margin-right: -20px;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .hero {
+    padding-top: 92px;
+    padding-bottom: 54px;
+  }
+}
+
+
+/* =========================================
+   FIRST MEASURE — COHESIVE BRAND COLOR PASS
+   Warm stone + deep navy + copper.
+   No layout changes.
+   ========================================= */
+
+body {
+  background: var(--paper);
+  color: var(--ink);
+}
+
+.site-header {
+  background: rgba(242, 239, 233, .96);
+  border-bottom-color: var(--line);
+}
+
+.hero {
+  background: var(--navy);
+}
+
+.manifesto {
+  background: var(--paper);
+}
+
+.approach,
+.professions,
+.examples {
+  background: var(--paper-dark);
+}
+
+.included {
+  background: var(--paper);
+}
+
+.principles {
+  background: var(--paper);
+}
+
+.principles-inner {
+  background: var(--navy);
+}
+
+.contact {
+  background: var(--paper);
+}
+
+.button.primary {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #fffaf5;
+}
+
+.button.secondary {
+  background: transparent;
+  border-color: var(--line);
+  color: var(--ink);
+}
+
+.example-card,
+.price-card {
+  background: var(--paper);
+}
+
+.price-card.featured,
+.contrast-block.highlight {
+  background: var(--accent-soft);
+}
+
+.text-link {
+  color: var(--ink);
+}
+
+.text-link span,
+.example-type,
+.price,
+.kicker,
+.step-no,
+.profession-list span,
+.principle-row span {
+  color: var(--accent);
+}
+
+/* Full-width section backgrounds stay coherent with the warm palette. */
+.hero::before {
+  background: var(--navy);
+}
+
+.manifesto::before,
+.included::before,
+.contact::before {
+  background: var(--paper);
+}
+
+.approach::before,
+.professions::before,
+.examples::before {
+  background: var(--paper-dark);
+}
+
+@media (max-width: 680px) {
+  nav {
+    background: var(--paper);
+  }
+
+  .principles-inner {
+    background: var(--navy);
+  }
+}
+
+
+/* =========================================
+   INTERVIEW EVIDENCE / USE YOUR PORTFOLIO
+   ========================================= */
+.interview-intro { display:grid; grid-template-columns:1.1fr .9fr; gap:100px; align-items:end; }
+.interview-intro .body-copy { max-width:480px; }
+.interview-intro .body-copy strong { color:var(--ink); }
+.interview-flow { display:grid; grid-template-columns:1fr 55px 1fr 55px 1fr; margin-top:75px; border-top:1px solid var(--ink); border-bottom:1px solid var(--line); }
+.interview-flow article { min-height:235px; padding:26px 24px 30px; }
+.interview-flow article + .flow-arrow { border-left:1px solid var(--line); border-right:1px solid var(--line); }
+.interview-flow .flow-highlight { background:var(--accent-soft); }
+.flow-no { display:block; color:var(--accent); font-size:10px; margin-bottom:34px; }
+.interview-flow small { font-size:9px; font-weight:800; letter-spacing:.15em; color:var(--muted); }
+.interview-flow h3 { margin:28px 0 0; font-family:Georgia,serif; font-size:22px; font-weight:400; line-height:1.2; }
+.flow-arrow { display:grid; place-items:center; color:var(--accent); font-size:20px; }
+.interview-bottom { margin-top:45px; display:grid; grid-template-columns:1fr 1fr; gap:80px; padding-top:25px; border-top:1px solid var(--line); }
+.interview-bottom span { display:block; color:var(--accent); font-size:9px; font-weight:800; letter-spacing:.15em; }
+.interview-bottom strong { display:block; margin-top:20px; max-width:440px; font-family:Georgia,serif; font-size:25px; font-weight:400; line-height:1.2; }
+.interview-bottom p { margin:0; color:var(--muted); max-width:430px; }
+.interview-bottom em { color:var(--accent); font-family:Georgia,serif; font-size:19px; }
+
+/* =========================================
+   FULL-WIDTH SECTION BANDS
+   ========================================= */
+.examples {
+  max-width:none;
+  width:100%;
+  background:var(--paper-dark);
+}
+.examples > .section-meta,
+.examples > .example-grid,
+.examples > .examples-note {
+  width:100%;
+  max-width:var(--max);
+  margin-left:auto;
+  margin-right:auto;
+}
+.principles {
+  max-width:none;
+  width:100%;
+  background:var(--navy);
+  padding-left:0;
+  padding-right:0;
+}
+.principles-inner {
+  width:100%;
+  max-width:var(--max);
+  margin-left:auto;
+  margin-right:auto;
+  background:transparent;
+  color:var(--paper);
+}
+@media (max-width:680px) {
+  .examples { padding-left:18px; padding-right:18px; }
+  .examples > .section-meta,
+  .examples > .example-grid,
+  .examples > .examples-note { max-width:100%; }
+  .principles { padding-left:0; padding-right:0; }
+  .principles-inner { max-width:100%; padding-left:24px; padding-right:24px; background:var(--navy); }
+}
+@media (max-width:400px) {
+  .principles-inner { padding-left:20px; padding-right:20px; }
+}
+
+/* =========================================
+   SERVICE LIST / TEXT RHYTHM SAFEGUARD
+   ========================================= */
+.service-list > div {
+  display:grid;
+  grid-template-columns:45px minmax(0,1fr);
+  grid-template-rows:auto auto;
+  column-gap:18px;
+  row-gap:4px;
+}
+.service-list > div > span { grid-column:1; grid-row:1 / 3; }
+.service-list > div > strong { grid-column:2; grid-row:1; min-width:0; }
+.service-list > div > p { grid-column:2; grid-row:2; margin:0; min-width:0; line-height:1.5; }
+@media (max-width:680px) {
+  .service-list > div { grid-template-columns:38px minmax(0,1fr); column-gap:14px; }
+}
+@media (max-width:400px) {
+  .service-list > div { grid-template-columns:32px minmax(0,1fr); column-gap:10px; }
+}
+
+/* =========================================
+   INTERVIEW MOBILE RHYTHM
+   ========================================= */
+@media (max-width:900px) {
+  .interview-intro { grid-template-columns:1fr; gap:45px; }
+  .interview-flow { grid-template-columns:1fr; }
+  .interview-flow article { min-height:0; }
+  .interview-flow article + .flow-arrow { min-height:48px; border-left:0; border-right:0; border-top:1px solid var(--line); border-bottom:1px solid var(--line); }
+  .interview-bottom { grid-template-columns:1fr; gap:35px; }
+}
+@media (max-width:680px) {
+  .interview-intro { gap:28px; }
+  .interview-flow { margin-top:40px; }
+  .interview-flow article { padding:22px 20px 24px; }
+  .flow-no { margin-bottom:22px; }
+  .interview-flow h3 { margin-top:20px; font-size:21px; }
+  .interview-bottom { margin-top:32px; padding-top:20px; gap:28px; }
+  .interview-bottom strong { margin-top:16px; font-size:22px; }
 }
