@@ -76,7 +76,7 @@ h2 { margin: 0; font-family: Georgia, "Times New Roman", serif; font-size: clamp
 .step-no { color: var(--accent); font-size: 11px; padding-top: 5px; }
 .step h3 { margin: 0; font-family: Georgia, serif; font-size: 27px; font-weight: 400; }
 .step p { margin: 6px 0 0; color: var(--muted); font-size: 13px; max-width: 670px; }
-.professions { background: var(--paper-dark); max-width: none; padding-left: max(24px, calc((100vw - var(--max)) / 2)); padding-right: max(24px, calc((100vw - var(--max)) / 2)); }
+.professions { background: var(--paper); max-width: none; padding-left: max(24px, calc((100vw - var(--max)) / 2)); padding-right: max(24px, calc((100vw - var(--max)) / 2)); }
 .profession-intro { display: grid; grid-template-columns: 1.1fr .9fr; gap: 100px; align-items: end; }
 .profession-intro p { max-width: 440px; color: var(--muted); }
 .profession-list { margin-top: 75px; display: grid; grid-template-columns: repeat(2, 1fr); border-top: 1px solid var(--line); }
@@ -94,15 +94,15 @@ h2 { margin: 0; font-family: Georgia, "Times New Roman", serif; font-size: clamp
 .service-list p { color: var(--muted); margin: 4px 0 0; font-size: 12px; }
 .principles { padding-top: 80px; }
 .principles-inner { background: var(--ink); color: var(--paper); padding: 60px; }
-.principles-inner .section-meta { color: #C6C0B7; }
-.principles-inner .section-meta span:first-child { color: #C78360; }
+.principles-inner .section-meta { color: var(--paper-dark); }
+.principles-inner .section-meta span:first-child { color: var(--accent); }
 .principles-inner h2 { max-width: 900px; }
-.principles-inner h2 em { color: #C78360; }
+.principles-inner h2 em { color: var(--accent); }
 .principle-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 30px; margin-top: 75px; }
-.principle-row div { border-top: 1px solid #53616A; padding-top: 14px; }
-.principle-row span { color: #C78360; font-size: 10px; }
+.principle-row div { border-top: 1px solid var(--muted); padding-top: 14px; }
+.principle-row span { color: var(--accent); font-size: 10px; }
 .principle-row strong { display: block; margin-top: 32px; font-family: Georgia, serif; font-weight: 400; font-size: 18px; }
-.principle-row p { color: #C6C0B7; font-size: 11px; }
+.principle-row p { color: var(--paper-dark); font-size: 11px; }
 .contact { text-align: center; padding-top: 150px; padding-bottom: 160px; }
 .contact-meta { color: var(--accent); }
 .contact h2 { max-width: 950px; margin: 30px auto 0; }
@@ -593,7 +593,7 @@ body {
 }
 
 .professions {
-  background: var(--accent-soft);
+  background: var(--paper);
 }
 
 .included {
