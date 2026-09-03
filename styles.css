@@ -860,3 +860,8 @@ footer { max-width: none; padding-left: var(--gutter); padding-right: var(--gutt
   :root { --gutter: 20px; }
   .principles-inner { padding-left: 20px; padding-right: 20px; }
 }
+
+
+/* Hero secondary action must retain sufficient contrast on navy. */
+.hero .text-link { color: var(--paper-dark); }
+.hero .text-link:hover { color: var(--paper); }
