@@ -5,13 +5,14 @@ if (menuToggle && nav) {
   const closeMenu = () => {
     nav.classList.remove('open');
     menuToggle.setAttribute('aria-expanded', 'false');
-    menuToggle.setAttribute('aria-label', 'Open menu');
+    menuToggle.setAttribute('aria-label', 'Open navigation menu');
   };
 
   menuToggle.addEventListener('click', () => {
     const open = nav.classList.toggle('open');
     menuToggle.setAttribute('aria-expanded', String(open));
-    menuToggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+    menuToggle.setAttribute('aria-label', open ? 'Close navigation menu' : 'Open navigation menu');
+    if (open) nav.querySelector('a')?.focus();
   });
 
   nav.querySelectorAll('a').forEach(link => {
@@ -23,6 +24,16 @@ if (menuToggle && nav) {
       closeMenu();
       menuToggle.focus();
     }
+  });
+
+  document.addEventListener('click', event => {
+    if (nav.classList.contains('open') && !nav.contains(event.target) && !menuToggle.contains(event.target)) {
+      closeMenu();
+    }
+  });
+
+  window.addEventListener('resize', () => {
+    if (window.innerWidth > 820) closeMenu();
   });
 }
 
@@ -42,3 +53,4 @@ if ('IntersectionObserver' in window) {
 } else {
   revealItems.forEach(item => item.classList.add('visible'));
 }
+
